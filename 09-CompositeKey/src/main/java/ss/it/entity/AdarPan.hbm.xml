@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="ss.it.entity.Adaar_Pan_Link">
+		<composite-id name="apid" class="ss.it.entity.AadarWithPAN_ID">
+			<key-property name="auid" />
+			<key-property name="panNo" />
+		</composite-id>
+
+		<property name="name" />
+		<property name="desg" />
+		<property name="salary" />
+	</class>
+</hibernate-mapping>
