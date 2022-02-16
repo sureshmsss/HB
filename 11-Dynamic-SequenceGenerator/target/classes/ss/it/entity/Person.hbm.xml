@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="ss.it.entity.Person" dynamic-update="true">
+		<!-- type- giving predefined sequence to use-->
+		<!-- <id name="id"> <generator class="sequence" /> </id> -->
+		
+		<!-- type-2 giving user defined sequence to use-->
+<!-- 		<id name="id">
+			<generator class="sequence">
+				<param name="sequence_name">my_seq</param>
+			</generator>
+		</id>
+ -->		<!-- type-3 generating the sequence dynamically -->
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence_name">my</param>
+				<param name="initial_value">1000</param>
+				<param name="increment_size">10</param>
+			</generator>
+		</id>
+		<property name="name" />
+		<property name="address" />
+		<property name="gender" />
+	</class>
+</hibernate-mapping>
