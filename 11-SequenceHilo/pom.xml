@@ -6,10 +6,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>MS</groupId>
-	<artifactId>01-Save</artifactId>
+	<artifactId>04-Update</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>01-Save</name>
+	<name>04-Update</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
@@ -49,6 +49,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.27</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
