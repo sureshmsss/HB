@@ -9,7 +9,7 @@ import lombok.Data;
 public  class Product {
 	private Integer pid;
 	private String pname;
-	private Integer price;
+	private Float price;
 	private Float qty;
 
 }

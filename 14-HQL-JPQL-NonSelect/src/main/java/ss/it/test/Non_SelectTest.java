@@ -21,42 +21,41 @@ public class Non_SelectTest {
 		Transaction tx = null;
 		try (factory; ses) {
 			System.out.println("hello try opernd");
-			//begin transaction
+			// begin transaction
 			tx = ses.beginTransaction();
 
-			/*		// prepare HQL select query aggregate function
-					Query query1 = ses.createQuery(
-							"update Product set price=price-:discount where price>=:minprice and price<=:maxprice");
-			
-					// set values to query params
-					query1.setParameter("discount", 30.0f);
-					query1.setParameter("minprice", 500.0f);
-					query1.setParameter("maxprice", 54251.0f);
-			
-					// execute query
-					query1.executeUpdate();// gives object class pointing to object[]
-			
-						// commit the transaction
-			tx.commit();
-			// print the affected rows
-			//System.out.println("affected rows are : " + count);
-			 // executing HQL select query aggregate function
-			Query query2 = ses.createQuery(
-					"delete from Product where qty=:val");
-			
+			// prepare HQL select query aggregate function
+			Query query1 = ses.createQuery(
+					"update Product set price=price-:discount where price>=:minprice and price<=:maxprice");
+
 			// set values to query params
-			query2.setParameter("val", 4f);
-			
+			query1.setParameter("discount", 30.0f);
+			query1.setParameter("minprice", 600.0f);
+			query1.setParameter("maxprice", 800.0f);
+
 			// execute query
-			int count=query2.executeUpdate();// gives object class pointing to object[]
-			
+			int count = query1.executeUpdate();// gives object class pointing to object[]
+
 			// commit the transaction
 			tx.commit();
-			// print the affrected rows
+			// print the affected rows
 			System.out.println("affected rows are : " + count);
-			*/
-			
-		
+			/*	 // executing HQL select query aggregate function
+				Query query2 = ses.createQuery(
+						"delete from Product where qty=:val");
+				
+				// set values to query params
+				query2.setParameter("val", 4f);
+				
+				// execute query
+				int count=query2.executeUpdate();// gives object class pointing to object[]
+				
+				// commit the transaction
+				tx.commit();
+				// print the affrected rows
+				System.out.println("affected rows are : " + count);
+				*/
+
 		} // try
 		catch (HibernateException e) {
 			e.printStackTrace();
