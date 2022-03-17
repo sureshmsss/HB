@@ -1,7 +1,5 @@
 package ss.it.entity;
 
-import javax.persistence.Table;
-
 import lombok.Data;
 
 @Data
