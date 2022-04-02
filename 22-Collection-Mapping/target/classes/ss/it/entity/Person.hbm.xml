@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="ss.it.entity.Person" table="HB_COLL_Person">
+		<id name="pid" column="pid">
+			<generator class="increment" />
+		</id>
+		<property name="pname" column="pname" length="10" />
+		<property name="address" column="address" length="10" />
+		<list name="nickNames" table="HB_COLL_NickNames">
+			<key column="person_id" /><!-- fk column -->
+			<index column="indx" type="int" length="3" /><!-- index column -->
+			<element column="nickname" type="string" /> <!-- list collection element val column -->
+		</list>
+		<bag name="friends" table="HB_COLL_Friends">
+			<key column="person_id" />
+			<element column="friend" type="string" />
+		</bag>
+		<set name="phones" table="HB_COLL_Phones">
+			<key column="person_id" />
+			<element column="phones" type="long" />
+		</set>
+		<map name="idCards" table="HB_COLL_IDCARDS">
+			<key column="person_id" />
+			<index column="idtype" type="string" length="10" />
+			<element column="idNo" type="long" length="14" />
+		</map>
+	</class>
+</hibernate-mapping>
