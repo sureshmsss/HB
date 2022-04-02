@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="ss.it.entity.Person" table="INH_TPCC_Person">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="name" column="name" length="10" />
+		<property name="address" column="address" length="10" />
+		<union-subclass name="ss.it.entity.Employee"
+			table="INH_TPCC_Employee">
+			<property name="desg" column="desg" />
+			<property name="salary" column="salary" />
+			<property name="company" column="company" />
+		</union-subclass>
+		<union-subclass name="ss.it.entity.Customer"
+			table="INH_TPCC_Customer">
+			<property name="billNo" />
+			<property name="billAmt" />
+		</union-subclass>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="ss.it.entity.Person" table="INH_TPSC_Person">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="name" column="name" length="10" />
+		<property name="address" column="address" length="10" />
+		<joined-subclass name="ss.it.entity.Employee"
+			table="INH_TPSC_Employee">
+			<key column="pid" />
+			<property name="desg" column="desg" />
+			<property name="salary" column="salary" />
+			<property name="company" column="company" />
+		</joined-subclass>
+		<joined-subclass name="ss.it.entity.Customer"
+			table="INH_TPSC_Customer">
+			<key column="pid" />
+			<property name="billNo" />
+			<property name="billAmt" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping>
